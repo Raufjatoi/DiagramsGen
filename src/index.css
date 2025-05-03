@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    
+    /* Change primary color to purple */
+    --primary: 270 70% 50%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --accent: 270 70% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 270 70% 50%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    
+    /* Change primary color to purple in dark mode */
+    --primary: 270 70% 60%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: 270 70% 30%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 270 70% 60%;
+  }
+}
+
+/* Global responsive styles */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+  }
+  
+  /* Responsive font sizes */
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  /* Ensure proper viewport settings */
+  @media (max-width: 480px) {
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+  }
+  
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom styles for Mermaid diagrams - Purple theme */
+@layer components {
+  /* Responsive container classes */
+  .responsive-container {
+    @apply w-full px-4 sm:px-6 md:px-8 mx-auto;
+    max-width: 100%;
+  }
+  
+  @screen sm {
+    .responsive-container {
+      max-width: 640px;
+    }
+  }
+  
+  @screen md {
+    .responsive-container {
+      max-width: 768px;
+    }
+  }
+  
+  @screen lg {
+    .responsive-container {
+      max-width: 1024px;
+    }
+  }
+  
+  @screen xl {
+    .responsive-container {
+      max-width: 1280px;
+    }
+  }
+  
+  /* Responsive text classes */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+  
+  /* Responsive spacing */
+  .space-responsive-y {
+    @apply space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6;
+  }
+  
+  .space-responsive-x {
+    @apply space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6;
+  }
+  
+  .p-responsive {
+    @apply p-2 sm:p-3 md:p-4 lg:p-6;
+  }
+  
+  .py-responsive {
+    @apply py-2 sm:py-3 md:py-4 lg:py-6;
+  }
+  
+  .px-responsive {
+    @apply px-2 sm:px-3 md:px-4 lg:px-6;
+  }
+  
+  /* Responsive flex layouts */
+  .flex-responsive-col {
+    @apply flex flex-col xs:flex-row;
+  }
+  
+  .flex-responsive-row {
+    @apply flex flex-row xs:flex-col;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom styles */
+@layer components {
+  .glass-panel {
+    @apply bg-white/80 dark:bg-black/50 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50 rounded-lg shadow-sm;
+  }
+  
+  .glass-button {
+    @apply bg-white/80 dark:bg-white/10 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 
+    rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:bg-white/90 dark:hover:bg-white/20;
+  }
+  
+  .editor-container {
+    @apply h-full w-full overflow-hidden font-mono text-sm p-4 bg-slate-50/90 dark:bg-slate-900/90 
+    border border-slate-200/80 dark:border-slate-800/80 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary;
+  }
+  
+  .diagram-container {
+    @apply p-6 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 rounded-lg shadow-sm;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Custom transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 400ms, transform 400ms;
+}
