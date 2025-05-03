@@ -20,7 +20,7 @@ A modern web application that generates professional diagrams using AI. Simply d
 - Node.js 16+- npm or yarn
 ### Installation
 ```bash
-# Clone the repositorygit clone https://github.com/RaufJatoi/DiagramGen.git
+# Clone the repositorygit clone https://github.com/Raufjatoi/DiagramGen.git
 cd diagram-generator
 # Install dependenciesnpm install
 # Start the development server
